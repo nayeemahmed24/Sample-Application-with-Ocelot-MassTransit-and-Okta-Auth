@@ -6,14 +6,32 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 81
+          "Port": 5004
         }
       ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       },
-      "UpstreamPathTemplate": "/{everything}",
+      "UpstreamPathTemplate": "/api/b/{everything}",
+      "UpstreamHttpMethod": [
+        "Get"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/api/a/{everything}",
       "UpstreamHttpMethod": [
         "Get"
       ]

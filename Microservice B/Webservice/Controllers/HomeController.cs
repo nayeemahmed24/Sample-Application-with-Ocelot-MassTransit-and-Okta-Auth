@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 namespace Webservice.Controllers
 {
+    [ApiController]
+    [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
         private readonly IBus _bus;
