@@ -1,0 +1,10 @@
+<div *ngIf="error" class="error">
+  {{ error }}
+</div>
+
+
+<h1 *ngIf="isAuthenticated && userName">User is logged in successfully -- {{userName}} </h1>
+<h1 *ngIf="!isAuthenticated">User is not logged in</h1>
+
+
+

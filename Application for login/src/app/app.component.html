@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="ui inverted top fixed menu">
+  <div class="ui container">    
+    <a class="item btn btn-primary ml-1" *ngIf="!isAuthenticated" (click)="login()">Login</a>
+    <a id="logout-button" class="item btn btn-primary ml-1" *ngIf="isAuthenticated" (click)="logout()">Logout</a>
+  </div>
+</div>
+
+<div class="ui text container" style="margin-top: 7em;">
+  <router-outlet></router-outlet>
+</div>
