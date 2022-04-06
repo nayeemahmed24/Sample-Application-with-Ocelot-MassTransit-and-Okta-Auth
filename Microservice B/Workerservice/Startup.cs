@@ -46,6 +46,7 @@ namespace Workerservice
             });
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddControllers();
+            services.AddHostedService<MassTransitService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

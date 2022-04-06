@@ -30,7 +30,7 @@ namespace Workerservice
         {
             services.AddMassTransit(x =>
             {
-                x.AddConsumers(typeof(McATestCommand).Assembly);
+                x.AddConsumers(typeof(McATestCommandHandler).Assembly);
                 x.UsingRabbitMq((context, cfg) =>
                 {
                     cfg.Host(Configuration["Queue:Url"], h =>
@@ -38,13 +38,15 @@ namespace Workerservice
                         h.Username(Configuration["Queue:Username"]);
                         h.Password(Configuration["Queue:Password"]);
                     });
-                    cfg.ReceiveEndpoint(Configuration["Queue:QueueName"], e =>
+                    cfg.ReceiveEndpoint("MicroserviceA.Test" , e =>
                     {
                         e.ConfigureConsumer<McATestCommandHandler>(context);
                     });
                 });
             });
             services.AddControllers();
+
+            services.AddHostedService<MassTransitService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
