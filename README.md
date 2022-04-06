@@ -9,3 +9,7 @@ The system has 3 parts:
 4. Okta is used to authorize the request in Ocelot Api gateway.  
 
 Note: Currently I am using token copying from localstorage to test api gateway and endpoints. 
+
+Credentials:
+Username- isaac@gmail.com
+Password- 1qazzaq12wsx
